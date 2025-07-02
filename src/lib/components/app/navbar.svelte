@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { Github } from "@lucide/svelte";
+  import { GithubIcon } from "@lucide/svelte";
+
+  import ThemeToggle from "./theme-toggle.svelte";
 </script>
 
 <div class="navbar bg-primary text-primary-content">
@@ -9,6 +11,10 @@
     </a>
   </div>
   <div class="navbar-end">
-    <button class="btn btn-accent">Đăng nhập với Github<Github size="24" /></button>
+    <ThemeToggle />
+    <button class="btn btn-accent">
+      Sign In with Github
+      <GithubIcon size="24" />
+    </button>
   </div>
 </div>
