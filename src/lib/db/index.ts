@@ -1,4 +1,4 @@
-import env from "$lib/env";
+import { env } from "$env/dynamic/private";
 import { drizzle } from "drizzle-orm/libsql";
 
 import * as schema from "./schema";
