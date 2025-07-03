@@ -1,3 +1,4 @@
+import { env } from "$env/dynamic/private";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 
@@ -9,5 +10,11 @@ export const auth = betterAuth({
   }),
   advanced: {
     generateId: false,
+  },
+  socialProviders: {
+    github: {
+      clientId: env.AUTH_GITHUB_CLIENT_ID as string,
+      clientSecret: env.AUTH_GITHUB_CLIENT_SECRET as string,
+    },
   },
 });
