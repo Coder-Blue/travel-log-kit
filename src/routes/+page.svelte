@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { GithubIcon } from "@lucide/svelte";
+  import AuthButton from "$lib/components/auth-button.svelte";
 </script>
 
 <div class="hero bg-base-300 container mx-auto mt-4">
@@ -9,7 +9,7 @@
       <p class="py-6">
         Keep track of your travels and adventures with this simple travel log app. Add locations, photos, and notes to create a digital journal of your journeys.
       </p>
-      <button class="btn btn-accent">Sign In with Github<GithubIcon size="24" /></button>
+      <AuthButton />
     </div>
   </div>
 </div>

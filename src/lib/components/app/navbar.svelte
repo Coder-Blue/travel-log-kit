@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { GithubIcon } from "@lucide/svelte";
-
+  import AuthButton from "../auth-button.svelte";
   import ThemeToggle from "./theme-toggle.svelte";
 </script>
 
@@ -12,9 +11,6 @@
   </div>
   <div class="navbar-end">
     <ThemeToggle />
-    <button class="btn btn-accent">
-      Sign In with Github
-      <GithubIcon size="24" />
-    </button>
+    <AuthButton />
   </div>
 </div>
