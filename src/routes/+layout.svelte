@@ -8,7 +8,7 @@
 
 <div class="flex min-h-screen flex-col">
   <Navbar />
-  <main>
+  <main class="flex-1 flex flex-col">
     {@render children()}
   </main>
 </div>
