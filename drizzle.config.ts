@@ -2,7 +2,7 @@
 import { defineConfig } from "drizzle-kit";
 
 if (!process.env.TURSO_DATABASE_URL)
-  throw new Error("You need to set the env for db");
+  throw new Error("DATABASE_URL is not set");
 
 export default defineConfig({
   out: "./src/lib/db/migrations",
@@ -10,7 +10,7 @@ export default defineConfig({
   casing: "snake_case",
   dialect: "turso",
   dbCredentials: {
-    url: process.env.TURSO_DATABASE_URL,
-    authToken: process.env.NODE_ENV === "development" ? undefined : process.env.TURSO_AUTH_TOKEN!,
+    url: process.env.TURSO_DATABASE_URL!,
+    authToken: process.env.TURSO_AUTH_TOKEN!,
   },
 });

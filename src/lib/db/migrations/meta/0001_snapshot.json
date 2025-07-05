@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "5b13322d-6506-46a2-a192-5e539e8a8a76",
-  "prevId": "9dd72994-b8b6-4e2f-a45e-c553b8d8f9d9",
+  "id": "b1ea84d2-b06d-47a4-8869-fd4c16e5d243",
+  "prevId": "5d3bd4a1-fee1-408f-bf6f-f0020dd6f5d5",
   "tables": {
     "account": {
       "name": "account",
@@ -413,7 +413,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -433,13 +433,6 @@
         },
         "name": {
           "name": "name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true,
-          "autoincrement": false
-        },
-        "slug": {
-          "name": "slug",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
@@ -509,15 +502,7 @@
           "autoincrement": false
         }
       },
-      "indexes": {
-        "locationLog_slug_unique": {
-          "name": "locationLog_slug_unique",
-          "columns": [
-            "slug"
-          ],
-          "isUnique": true
-        }
-      },
+      "indexes": {},
       "foreignKeys": {
         "locationLog_location_id_location_id_fk": {
           "name": "locationLog_location_id_location_id_fk",
@@ -529,7 +514,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         },
         "locationLog_user_id_user_id_fk": {
@@ -542,7 +527,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -608,7 +593,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         },
         "locationLogImage_user_id_user_id_fk": {
@@ -621,7 +606,7 @@
           "columnsTo": [
             "id"
           ],
-          "onDelete": "no action",
+          "onDelete": "cascade",
           "onUpdate": "no action"
         }
       },
@@ -635,9 +620,7 @@
   "_meta": {
     "schemas": {},
     "tables": {},
-    "columns": {
-      "\"locationLogImage\".\"location_id\"": "\"locationLogImage\".\"location_log_id\""
-    }
+    "columns": {}
   },
   "internal": {
     "indexes": {}
