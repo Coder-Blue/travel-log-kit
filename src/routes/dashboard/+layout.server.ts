@@ -8,7 +8,7 @@ export const load: LayoutServerLoad = async ({ request }) => {
     headers: request.headers,
   });
 
-  if (!session) {
+  if (!session?.user) {
     redirect(302, "/");
   }
 };

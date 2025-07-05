@@ -8,7 +8,7 @@ export function useAuthStore() {
   const session = fromStore(authClient.useSession());
 
   const user = $derived(session.current.data?.user);
-  const loading = $derived(session.current.isPending);
+  const loading = $derived.by(() => session.current.isPending || session.current.isRefetching);
 
   async function signIn() {
     await authClient.signIn.social({
