@@ -1,24 +1,36 @@
+import { goto } from "$app/navigation";
 import { createAuthClient } from "better-auth/svelte";
+import { fromStore } from "svelte/store";
 
 const authClient = createAuthClient();
 
 export function useAuthStore() {
-  let loading = $state<boolean>(false);
+  const session = fromStore(authClient.useSession());
+
+  const user = $derived(session.current.data?.user);
+  const loading = $derived(session.current.isPending);
 
   async function signIn() {
-    loading = true;
     await authClient.signIn.social({
       provider: "github",
       callbackURL: "/dashboard",
       errorCallbackURL: "/error",
     });
-    loading = false;
+  }
+
+  async function signOut() {
+    await authClient.signOut();
+    goto("/");
   }
 
   return {
     get loading() {
       return loading;
     },
+    get user() {
+      return user;
+    },
     signIn,
+    signOut,
   };
 }
